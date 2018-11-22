@@ -111,8 +111,8 @@ public class Startup
       config.AddPolicy<MyModel>("FullInfo",policy => {
           policy.RequireSelfLink()
                 .RequireRoutedLink("all", "GetAllModelsRoute")
-                .RequireRoutedLink("parentModels", "GetParentModelRoute", x => new { parentId = x.ParentId });
-                .RequireRoutedLink("subModels", "GetSubModelsRoute", x => new { id = x.Id });
+                .RequireRoutedLink("parentModels", "GetParentModelRoute", x => new { parentId = x.ParentId })
+                .RequireRoutedLink("subModels", "GetSubModelsRoute", x => new { id = x.Id })
                 .RequireRoutedLink("delete", "DeleteModelRoute", x => new { id = x.Id });
       });
     });
